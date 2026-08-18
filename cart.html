@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - CLICON</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+     <header class="site-header">
+        
+
+        <!-- Middle Header with Search & Icons -->
+        <div class="main-header">
+            <div class="container main-header-container">
+                <!-- Logo Container (Ready for SVG insertion) -->
+                <a href="index.html" class="logo-link">
+                    <div class="logo">
+                       <img src="images/logo.svg" alt="CLICON Logo" style="height: 32px; width: auto;">
+                    </div>
+                </a>
+
+               
+
+                <!-- Header Action Icons -->
+                <div class="header-icons">
+                    <div class="cart-icon" id="cart-icon" title="View Cart">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span id="cart-count">0</span>
+                    </div>
+                    <a href="#" class="header-icon-link" title="Wishlist">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="header-icon-link" title="User Account">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Category Navigation Bar -->
+        <nav class="sub-nav">
+            <div class="container sub-nav-container">
+                <button class="category-dropdown-btn">
+                    All Category
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="nav-links">
+                    <a href="#">Track Order</a>
+                    <a href="#">Compare</a>
+                    <a href="#">Customer Support</a>
+                    <a href="#">Need Help</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> <span>›</span> <span class="active">Shopping Card</span>
+        </div>
+    </div>
+
+    <!-- ================= CART CONTENT ================= -->
+    <main class="cart-page">
+        <div class="container cart-layout">
+            <section class="cart-table-container">
+                <h3>Shopping Card</h3>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>PRODUCTS</th>
+                            <th>PRICE</th>
+                            <th>QUANTITY</th>
+                            <th>SUB-TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-body">
+                    </tbody>
+                </table>
+
+                <div class="cart-actions">
+                    <a href="index.html" class="btn btn-secondary">← RETURN TO SHOP</a>
+                    <button id="update-cart-btn" class="btn btn-outline">UPDATE CART</button>
+                </div>
+            </section>
+
+            <aside class="cart-summary-card">
+                <h3>Card Totals</h3>
+                <div class="summary-row">
+                    <span>Sub-total</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span id="summary-discount">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span id="summary-tax">$0.00</span>
+                </div>
+                <hr class="summary-divider">
+                <div class="summary-total-row">
+                    <span>Total</span>
+                    <strong id="summary-total">$0.00 USD</strong>
+                </div>
+                <button class="btn checkout-btn">PROCEED TO CHECKOUT →</button>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+
+            <!-- Column 1: Brand Info -->
+            <div class="footer-column brand-col">
+                <a href="index.html" class="footer-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" stroke="#FA8232" stroke-width="4"/>
+                        <circle cx="16" cy="16" r="6" fill="#FA8232"/>
+                    </svg>
+                    <strong>CLICON</strong>
+                </a>
+                <p class="support-label">Customer Supports:</p>
+                <strong class="phone-number">(629) 555-0129</strong>
+                <p class="address">
+                    4517 Washington Ave.<br>
+                    Manchester, Kentucky 39495
+                </p>
+                <p class="email">info@kinbo.com</p>
+            </div>
+
+            <!-- Column 2: Top Category -->
+            <div class="footer-column">
+                <h3>TOP CATEGORY</h3>
+                <a href="#">Computer & Laptop</a>
+                <a href="#">SmartPhone</a>
+                <a href="#">Headphone</a>
+                <a href="#" class="active-category">Accessories</a>
+                <a href="#">Camera & Photo</a>
+                <a href="#">TV & Homes</a>
+                <a href="#" class="browse-all">Browse All Product <span>→</span></a>
+            </div>
+
+            <!-- Column 3: Quick Links -->
+            <div class="footer-column">
+                <h3>QUICK LINKS</h3>
+                <a href="#">Shop Product</a>
+                <a href="cart.html">Shoping Cart</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Compare</a>
+                <a href="#">Track Order</a>
+                <a href="#">Customer Help</a>
+                <a href="#">About Us</a>
+            </div>
+
+            <!-- Column 4: Download App -->
+            <div class="footer-column app-col">
+                <h3>DOWNLOAD APP</h3>
+                <a href="#" class="app-btn">
+                    <svg width="20" height="22" viewBox="0 0 24 24" fill="white">
+                        <path d="M3 20.5v-17c0-.55.3-1.03.78-1.24L15 12 3.78 21.74c-.48-.21-.78-.69-.78-1.24zm13.78-7.26l2.36-1.36c.49-.28.49-1 0-1.28l-2.36-1.36-2.5 2.5 2.5 2.5zm-3.2 3.2L4.77 22.8c.24.13.52.16.79.08l9.02-5.21-2.0-2.01zm0-8.88l2.0-2.01-9.02-5.21c-.27-.08-.55-.05-.79.08l8.81 6.14z"/>
+                    </svg>
+                    <div>
+                        <span class="btn-subtext">Get it now</span>
+                        <strong class="btn-title">Google Play</strong>
+                    </div>
+                </a>
+                <a href="#" class="app-btn">
+                    <svg width="20" height="22" viewBox="0 0 24 24" fill="white">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.96.99-3.12-.98.04-2.18.66-2.88 1.48-.62.72-1.16 1.88-1.01 3.01 1.1.08 2.23-.55 2.9-1.37z"/>
+                    </svg>
+                    <div>
+                        <span class="btn-subtext">Get it now</span>
+                        <strong class="btn-title">App Store</strong>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Bottom Copyright Bar -->
+        <div class="copyright-bar">
+            Kinbo - eCommerce Template © 2021. Design by Templatecookie
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>
