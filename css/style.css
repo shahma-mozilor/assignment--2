@@ -983,13 +983,53 @@ footer {
     font-weight: 600;
 }
 
+.app-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .app-btn {
     background: #24282C;
+    border: 1px solid #303438;
     border-radius: 3px;
-    padding: 8px 12px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
+    width: 100%;
+    max-width: 220px;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.app-btn:hover {
+    background: #303438;
+    border-color: #FA8232;
+}
+
+.app-btn .app-icon {
+    flex-shrink: 0;
+}
+
+.app-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.app-btn .btn-subtext {
+    font-size: 11px;
+    color: #92999F;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.app-btn .btn-title {
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .btn-subtext {
@@ -1002,18 +1042,37 @@ footer {
     color: #FFFFFF;
 }
 
+.tags-col h3 {
+    margin-bottom: 12px;
+}
+
 .tags-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
+    max-width: 320px;
 }
 
 .tags-wrapper a {
     border: 1px solid #303438;
     border-radius: 2px;
-    padding: 4px 8px;
-    font-size: 11px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
     color: #FFFFFF;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.tags-wrapper a:hover {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Selected Tag Style (Matching Graphics Card border in reference) */
+.tags-wrapper a.active {
+    border-color: #FFFFFF;
 }
 
 .copyright-bar {
@@ -1100,8 +1159,10 @@ footer {
 }
 
 .modal-image img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    max-width: 280px;
+    max-height: 280px;
     object-fit: contain;
 }
 
