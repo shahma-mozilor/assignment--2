@@ -131,7 +131,7 @@ document.addEventListener("click", function (e) {
         if (e.target.closest(".add-cart-btn")) {
             e.stopPropagation();
             addToCart(productData, 1);
-            alert(`${productData.name} added to cart!`);
+            showToast(`${productData.name} added to cart!`);
             return;
         }
 
@@ -178,7 +178,7 @@ if (modalAddCart) {
         if (selectedProduct) {
             addToCart(selectedProduct, selectedQuantity);
             if (modal) modal.classList.remove("active");
-            alert(`${selectedProduct.name} added to cart!`);
+            showToast(`${productData.name} added to cart!`);
         }
     });
 }
@@ -232,4 +232,18 @@ if (nextButton && prevButton && categories) {
 
     // Initial check on load
     updateArrowStates();
+}
+
+// Function to show in-site toast notification
+function showToast(message) {
+    const toast = document.getElementById("toast-notification");
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
 }
