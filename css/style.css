@@ -1498,10 +1498,12 @@ footer {
 }
 
 .video-container {
-    width: 100%;
-    max-width: 800px;
+    width: min(800px, 92vw);
     aspect-ratio: 16 / 9;
     margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-container iframe {
