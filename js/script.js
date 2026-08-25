@@ -248,14 +248,3 @@ function showToast(message) {
     }, 3000);
 }
 
-.video-container {
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
