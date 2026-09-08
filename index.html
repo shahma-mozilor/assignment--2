@@ -3,7 +3,7 @@
 
 <head>
    <!-- Google Consent Mode v2 -->
-   <!-- <script>
+   <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -23,86 +23,12 @@
 
         gtag("set", "ads_data_redaction", true);
         gtag("set", "url_passthrough", true);
-    </script>-->
+    </script>
 
 
-  
-
-
-
-
-    <!-- Start cookieyes banner --> 
-     <!--<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/249ce6aff3a2b347234acb3d874ffcfa/script.js"></script> -->
-     <!-- End cookieyes banner -->
-
-
-    <!-- CookieYes Microsoft UET Custom Script -->
-  
-<!--<script>
-    function initializeUET() {
-
-        (function(w, d, t, u, o) {
-            w[u] = w[u] || [];
-            o.ts = (new Date()).getTime();
-
-            var n = d.createElement(t);
-
-            n.src = "https://bat.bing.net/bat.js?ti=" + o.ti +
-                ("uetq" != u ? "&q=" + u : "");
-
-            n.async = 1;
-
-            n.onload = n.onreadystatechange = function() {
-                var s = this.readyState;
-
-                if (s && "loaded" !== s && "complete" !== s) {
-                    return;
-                }
-
-                o.q = w[u];
-                w[u] = new UET(o);
-                w[u].push("pageLoad");
-
-                n.onload = n.onreadystatechange = null;
-            };
-
-            var i = d.getElementsByTagName(t)[0];
-            i.parentNode.insertBefore(n, i);
-
-        })(window, document, "script", "uetq", {
-            ti: "343269237",
-            enableAutoSpaTracking: true
-        });
-    }
-
-
-    document.addEventListener('cookieyes_banner_load', (eventData) => {
-
-        const data = eventData.detail;
-
-        if (data.categories.advertisement) {
-            initializeUET();
-        } else {
-            document.addEventListener(
-                'cookieyes_consent_update',
-                handleConsentUpdate
-            );
-        }
-    });
-
-
-    function handleConsentUpdate(eventData) {
-
-        const data = eventData.detail;
-
-        if (data.accepted.includes("advertisement")) {
-            initializeUET();
-        }
-    }
-</script> -->
 
 <!-- Google tag (gtag.js) -->
-<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81B27XNJSX"></script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-81B27XNJSX"></script>
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -114,28 +40,116 @@
         gtag('js', new Date());
 
         gtag('config', 'G-81B27XNJSX');
-    </script> --> 
-
-     <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i) {
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
-            });
-
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer'?'&l='+l:'';
-
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
-            f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-T4TGM6TH');
     </script>
-    <!-- End Google Tag Manager -->
+
+
+
+    <!-- Start cookieyes banner --> 
+     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/249ce6aff3a2b347234acb3d874ffcfa/script.js"></script> 
+     <!-- End cookieyes banner -->
+
+
+   
+
+
+   
+
+    <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {
+    if(f.fbq)return;
+
+    n=f.fbq=function()
+    {
+      n.callMethod ?
+      n.callMethod.apply(n,arguments) :
+      n.queue.push(arguments)
+    };
+
+    if(!f._fbq)f._fbq=n;
+
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s);
+  }
+  (
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+
+  /* Start with Meta consent revoked */
+  fbq('consent', 'revoke');
+
+  /* Initialize Meta Pixel */
+  fbq('init', '1094555642937978');
+
+  /* Track PageView */
+  fbq('track', 'PageView');
+
+
+  /* Handle CookieYes consent */
+  function handleConsent(hasConsent) {
+    fbq(
+      'consent',
+      hasConsent ? 'grant' : 'revoke'
+    );
+  }
+
+
+  /* When the user changes their consent */
+  document.addEventListener(
+    'cookieyes_consent_update',
+    function(eventData) {
+
+      const data = eventData.detail;
+
+      handleConsent(
+        data.accepted &&
+        data.accepted.includes('advertisement')
+      );
+
+    }
+  );
+
+
+  /* When CookieYes banner loads */
+  document.addEventListener(
+    'cookieyes_banner_load',
+    function(eventData) {
+
+      const data = eventData.detail;
+
+      handleConsent(
+        data.categories &&
+        data.categories.advertisement
+      );
+
+    }
+  );
+
+</script>
+
+<noscript>
+  <img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1094555642937978&ev=PageView&noscript=1"
+  />
+</noscript>
+
+<!-- End Meta Pixel Code -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,10 +163,7 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4TGM6TH"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+   
 
     <!-- ================= TOP PROMOTION BAR ================= -->
     <div class="top-bar">
